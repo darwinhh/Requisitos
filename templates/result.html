@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/resultado.css') }}">
+    <title>Resultado</title>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="result-box">
+            <h2>Resultado:</h2>
+            <p class="result-text">{{ result }}</p>
+        </div>
+        <a href="/" class="btn">Volver a la página principal</a>
+    </div>
+    <script src="{{ url_for('static', filename='js/format_response.js') }}"></script>
+
+</body>
+</html>
+

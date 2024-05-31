@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Interfaz de Requisitos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+
+<section class="main-container">
+    <div class="tab-nav-bar">
+        <div class="tab-navigation">
+            <ul class="tab-menu">
+                <li class="tab-btn active" data-tab="0">Generar Criterios de Aceptación</li>
+                <li class="tab-btn" data-tab="1">Generar Historias de Usuario</li>
+                <li class="tab-btn" data-tab="2">Priorizar Requisitos</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tab-content">
+        <div class="tab active" data-tab="0">
+            <div class="row">
+                <div class="left-column">
+                    <div class="info"></div>
+                    <h1>Interfaz de Requisitos</h1>
+                    <form action="/analyze" method="post" >
+                        <label for="requirements">Documento de requisitos a analizar:</label><br>
+                        <textarea id="requirements" name="requirements" rows="4" cols="50"></textarea><br>
+                        <input type="submit" value="Generar Criterios de Aceptación">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab" data-tab="1">
+            <div class="row">
+                <div class="left-column">
+                    <h1>Generar Historias de Usuario</h1>
+                    <form action="/generate_user_stories" method="post">
+                        <label for="requirements">Requisitos funcionales para generar historias de usuario:</label><br>
+                        <textarea id="requirements" name="requirements" rows="4" cols="50"></textarea><br>
+                        <input type="submit" value="Generar Historias de Usuario">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab" data-tab="2">
+            <div class="row">
+                <div class="left-column">
+                    <h1>Priorizar Requisitos</h1>
+                    <form action="/prioritize" method="post">
+                        <label for="requirements">Lista de requisitos (funcionales y no funcionales):</label><br>
+                        <textarea id="requirements" name="requirements" rows="4" cols="50"></textarea><br>
+                        <label for="additional_info">Información adicional (valor comercial, riesgo, viabilidad técnica):</label><br>
+                        <textarea id="additional_info" name="additional_info" rows="4" cols="50"></textarea><br>
+                        <input type="submit" value="Priorizar Requisitos">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
+
